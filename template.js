@@ -4,6 +4,8 @@
  *
  * Copyright (c) 2013 Eric Mann, 10up
  * Licensed under the MIT License
+ * 
+ * Forked by @DrewHammond to add various improvements and updates
  */
 
 'use strict';
@@ -42,16 +44,16 @@ exports.template = function( grunt, init, done ) {
 		}
 	], function( err, props ) {
 		props.keywords = [];
-		props.version = '0.1.0';
+		props.version = '0.2.0';
 		props.devDependencies = {
-			'grunt': '~0.4.1',
+			'grunt': '~0.4.4',
 			'matchdep': '~0.1.2',
 			'grunt-contrib-concat': '~0.1.2',
-			'grunt-contrib-uglify': '~0.1.1',
-			'grunt-contrib-cssmin': '~0.6.0',
-			'grunt-contrib-jshint': '~0.1.1',
-			'grunt-contrib-nodeunit': '~0.1.2',
-			'grunt-contrib-watch': '~0.2.0',
+			'grunt-contrib-uglify': '~0.4.0',
+			'grunt-contrib-cssmin': '~0.9.0',
+			'grunt-contrib-jshint': '~0.9.2',
+			'grunt-contrib-nodeunit': '~0.3.3',
+			'grunt-contrib-watch': '~0.6.1',
 		};
 		
 		// Sanitize names where we need to for PHP/JS
@@ -74,7 +76,7 @@ exports.template = function( grunt, init, done ) {
 				delete files[ 'assets/css/sass/' + props.js_safe_name + '.scss'];
 				delete files[ 'assets/css/src/' + props.js_safe_name + '.css' ];
 				
-				props.devDependencies["grunt-contrib-less"] = "~0.5.0";
+				props.devDependencies["grunt-contrib-less"] = "~0.11.0";
 				props.css_type = 'less';
 				break;
 			case 'n':
@@ -89,7 +91,7 @@ exports.template = function( grunt, init, done ) {
 				delete files[ 'assets/css/less/' + props.js_safe_name + '.less'];
 				delete files[ 'assets/css/src/' + props.js_safe_name + '.css' ];
 				
-				props.devDependencies["grunt-contrib-sass"] = "~0.2.2";
+				props.devDependencies["grunt-contrib-sass"] = "~0.7.3";
 				props.css_type = 'sass';
 				break;
 		}
